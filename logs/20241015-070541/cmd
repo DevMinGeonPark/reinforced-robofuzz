@@ -1,0 +1,1 @@
+./fuzzer.py --tb3-sitl --no-cov --method message --schedule single --repeat 1 --interval 5.0 --watchlist watchlist/turtlebot3.json

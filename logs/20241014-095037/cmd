@@ -1,0 +1,1 @@
+./fuzzer.py --test-rosidl --no-cov --watchlist watchlist/idltest.json
