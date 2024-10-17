@@ -677,6 +677,23 @@ def fuzz_msg(fuzzer, fuzz_targets):
             ]
 
         elif fuzzer.config.test_rosidl:
+            
+            # 타입 일치성에 대한 피드백
+            fbk = Feedback("type_dismatch_error",FeedbackType.DIFF, default_value=0.0)
+            fbk_list.append(fbk)
+            
+            # 최대값 초과에 대한 피드백
+            fbk = Feedback("max_exceeded_error",FeedbackType.INC, default_value=0.0)
+            fbk_list.append(fbk)
+            
+            # 최소 값 미만에 대한 피드백
+            fbk = Feedback("min_exceeded_error",FeedbackType.INC, default_value=0.0)
+            fbk_list.append(fbk)
+            
+            # 배열 타입 불일치에 대한 피드백
+            fbk = Feedback("array_type_mismatch_error", FeedbackType.DIFF, default_value=0.0)
+            fbk_list.append(fbk)
+            
             # - Gets a metatopic of type std_msgs/Empty
             # - Need to test a moving target (type)
             # - Already know that there's only one field, so the scheduler

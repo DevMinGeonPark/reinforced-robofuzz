@@ -6,6 +6,7 @@ class FeedbackType(Enum):
     DEC = auto() # favor if value decreases
     ZERO = auto() # favor if closer to zero
     TARGET = auto() # favor if closer to target value
+    DIFF = auto() # favor if difference is BIGGER
 
 
 class Feedback:
